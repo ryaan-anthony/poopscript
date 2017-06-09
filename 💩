@@ -1,10 +1,10 @@
 #!/bin/bash
 
 while read -r line; do
-  if [[ $line == "💬"* ]]; then
+  if [[ $line == "👃"* ]]; then
    continue # Do nothing
-  elif [[ $line == "👀"* ]]; then
-    eval "echo ${line:1}" >> debug.log
+  elif [[ $line == "🚽"* ]]; then
+    eval "echo ${line:1}" >> "🚽.log"
   elif [[ $line == "💩"* ]]; then
     eval "${line:1}"
   elif [[ $line ]]; then
