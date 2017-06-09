@@ -4,18 +4,18 @@ I wrote 💩Script while I was 💩ing.
 ## Installation instructions
 
 ```
-wget https://raw.githubusercontent.com/ryaan-anthony/poopscript/master/poop
-chmod +x poop
+wget https://raw.githubusercontent.com/ryaan-anthony/poopscript/master/💩
+chmod +x 💩
 ```
 
 ## How to run 💩Script 
 1. Get the example script
 ```
-wget https://raw.githubusercontent.com/ryaan-anthony/poopscript/master/example.poop
+wget https://raw.githubusercontent.com/ryaan-anthony/poopscript/master/example
 ```
-2. Run the poop command
+2. Run the 💩 command
 ```
-./poop example.poop
+./💩 example
 ```
 
 ## How to write 💩Script
