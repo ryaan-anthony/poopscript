@@ -1,14 +1,12 @@
 #!/bin/bash
 
 while read -r line; do
-  if [[ $line == "// "* ]]; then
+  if [[ $line == "#"* ]]; then
    continue # Do nothing
-  elif [[ $line == "<< "* ]]; then
-    debug=${line:3}
-    eval "echo $debug" >> debug.log
-  elif [[ $line == "$ "* ]]; then
-    statement=${line:2}
-    eval $statement
+  elif [[ $line == "<<"* ]]; then
+    eval "echo ${line:2}" >> debug.log
+  elif [[ $line == "$"* ]]; then
+    eval "${line:1}"
   elif [[ $line ]]; then
     eval "echo $line"
   fi

@@ -1,9 +1,8 @@
 
+# This is a comment
+
 $ OUTPUT="example output"
 
-This is standard $OUTPUT
-
-// This is a comment
-$ echo "This is $OUTPUT from a script!"
+This is how to print $OUTPUT
 
 << This is how to write $OUTPUT to debug.log
