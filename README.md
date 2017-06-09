@@ -20,10 +20,10 @@ wget https://raw.githubusercontent.com/ryaan-anthony/poopscript/master/example
 
 ## How to write 💩Script
 
-Lines that start with the pound symbol `#` are treated as comments.
+Lines that start with the comment emoji `💬` are treated as comments.
 
-Lines that start with a dollar sign `$` will be evaluated.
+Lines that start with a poop emoji `💩` will be evaluated.
 
-Lines that start with double arrows `<<` will be logged.
+Lines that start with eyes emoji `👀` will be logged.
 
 Lines without any syntax will be output.
