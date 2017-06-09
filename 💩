@@ -1,13 +1,13 @@
 #!/bin/bash
 
 while read -r line; do
-  if [[ $line == "👃"* ]]; then
-   continue # Do nothing
-  elif [[ $line == "🚽"* ]]; then
-    eval "echo ${line:1}" >> "🚽.log"
-  elif [[ $line == "💩"* ]]; then
-    eval "${line:1}"
-  elif [[ $line ]]; then
-    eval "echo $line"
+  # Comments are skipped
+  if [[ $line == "👃"* ]]; then continue
+  # Log mixed data to file
+  elif [[ $line == "🚽"* ]]; then eval "echo ${line:1}" >> "🚽.log"
+  # Evaluate statements
+  elif [[ $line == "💩"* ]]; then eval "${line:1}"
+  # Output text to stdout
+  elif [[ $line ]]; then eval "echo $line"
   fi
 done < "$1"
