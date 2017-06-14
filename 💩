@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# Interpret the instructions
+# Interpret the line
 function interpret
 {
-  instructions=$*
+  line=$*
   # Comments are skipped
-  if [[ $instructions == "👃"* ]]; then continue
+  if [[ $line == "👃"* ]]; then continue
   # Log mixed data to file
-  elif [[ $instructions == "🚽"* ]]; then eval "echo ${instructions/🚽}" >> "🚽.log"
+  elif [[ $line == "🚽"* ]]; then eval "echo ${line/🚽}" >> "🚽.log"
   # Evaluate statements
-  elif [[ $instructions == "💩"* ]]; then eval "${instructions/💩}"
+  elif [[ $line == "💩"* ]]; then eval "${line/💩}"
   # Output text to stdout
-  elif [[ $instructions ]]; then eval "echo $instructions"
+  elif [[ $line ]]; then eval "echo $line"
   fi
 }
 
