@@ -18,9 +18,7 @@ function interpret
 # Read from user input
 function interactive_mode
 {
-  while true; do
-    echo -n "🚻 "
-    read line
+  while read -p "🚻 " line; do
     interpret $line
   done
 }
