@@ -1,13 +1,45 @@
 #!/bin/bash
 
-while read -r line; do
+# Interpret the instructions
+function interpret
+{
+  instructions=$*
   # Comments are skipped
-  if [[ $line == "👃"* ]]; then continue
+  if [[ $instructions == "👃"* ]]; then continue
   # Log mixed data to file
-  elif [[ $line == "🚽"* ]]; then eval "echo ${line:1}" >> "🚽.log"
+  elif [[ $instructions == "🚽"* ]]; then eval "echo ${instructions/🚽}" >> "🚽.log"
   # Evaluate statements
-  elif [[ $line == "💩"* ]]; then eval "${line:1}"
+  elif [[ $instructions == "💩"* ]]; then eval "${instructions/💩}"
   # Output text to stdout
-  elif [[ $line ]]; then eval "echo $line"
+  elif [[ $instructions ]]; then eval "echo $instructions"
   fi
-done < "$1"
+}
+
+# Read from user input
+function interactive_mode
+{
+  while true; do
+    echo -n "🚻 "
+    read line
+    interpret $line
+  done
+}
+
+# Read from file
+function batch_mode
+{
+  while read -r line; do
+    interpret $line
+  done < "$1"
+}
+
+case "$1" in
+  -i|--interactive)
+    interactive_mode
+    exit 0
+    ;;
+  *)
+    batch_mode $*
+    exit 0
+    ;;
+esac

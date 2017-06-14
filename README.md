@@ -17,6 +17,10 @@ wget https://raw.githubusercontent.com/ryaan-anthony/poopscript/master/example
 ```
 ./💩 example
 ```
+3. Run the 💩 command in interactive mode (`-i`|`--interactive`)
+```
+./💩 --interactive
+```
 
 ## How to write 💩Script
 
